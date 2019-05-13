@@ -5,18 +5,28 @@ These utilities have evolved as I have been banging-out Python code for the last
 The functions that I was re-using the most are included in this repository.
 Most of these came from working with Tweepy.
 
+### Usage
+1) Copy `*_util` folder(s) to your project folder
+2) Add the appropriate `import` to your code, for example:
+```python
+import datetime_utils
+import debug_utils
+import file_utils
+import tweepy_utils
+```
+
 ### Contents
-- datetime_utils - UTC converters & daystart / midnight converter
+- **datetime_utils** - UTC converters & daystart / midnight converter
 	- local_to_utc(dt, naive=True)
 	- midnight(dt)
 	- utc_to_local(utc_dt)
-- debug_utils - Debugging utilities ported from 20 years of coding in Visual Basic, SQL, etc.
+- **debug_utils** - Debugging utilities ported from 20 years of coding in Visual Basic, SQL, etc.
 	- enter(self, proc_sig, memo=None)
 	- exit(self, memo=None)
 	- current_proc(self)
 	- print(self, *args, **kwargs)
 	- eprint(self, *args, **kwargs)
-- file_utils - Wrappers for saving CSV and YAML with optional BZip2 compression, plus touch() utility
+- **file_utils** - Wrappers for saving CSV and YAML with optional BZip2 compression, plus touch() utility
 	- save_csv(filename, rows, headers=None)
 	- load_yaml(filename)
 	- save_yaml(filename, data, batch_size=1000)
@@ -26,7 +36,7 @@ Most of these came from working with Tweepy.
 	- load_ids(filename)
 	- save_ids(filename, ids)
 	- touch(path, mode=0o644, create=True, utimes=None)
-- tweepy_utils - Wrappers for Tweepy functions that employ "caching" to reduce API calls
+- **tweepy_utils** - Wrappers for Tweepy functions that employ "caching" to reduce API calls
 	- get_blocked_ids()
 	- add_list_members(list_info, user_ids=None, user_names=None)
 	- extract_ids(list_of_objects)
@@ -37,12 +47,3 @@ Most of these came from working with Tweepy.
 	- get_user_objects(user_ids, json_only=True)
 	- remove_list_members(list_info, user_ids=None, user_names=None)
 
-### Usage
-1) Copy `util` folder(s) to your project folder
-2) Add the appropriate `import` to your code, for example:
-```python
-import datetime_utils
-import debug_utils
-import file_utils
-import tweepy_utils
-```
